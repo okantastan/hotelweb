@@ -15,13 +15,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- CSS Implementing Plugins -->
-  <link rel="stylesheet" href="https://htmlstream.com/front-dashboard/assets/css/vendor.min.css">
+  <link rel="stylesheet" href="{{ url('assets/css/vendor.min.css') }}">
 
   <!-- CSS Front Template -->
-  <link rel="stylesheet" href="https://htmlstream.com/front-dashboard/assets/css/theme.min.css?v=1.0">
+  <link rel="stylesheet" href="{{ url('assets/css/theme.min.css') }}">
 
-  <link rel="preload" href="https://htmlstream.com/front-dashboard/assets/css/theme.min.css" data-hs-appearance="default" as="style">
-  <link rel="preload" href="https://htmlstream.com/front-dashboard/assets/css/theme-dark.min.css" data-hs-appearance="dark" as="style">
+  <link href="{{ url('assets/css/theme.min.css') }}" data-hs-appearance="default" as="style">
+  <link href="{{ url('assets/css/theme-dark.min.css') }}" data-hs-appearance="dark" as="style">
 
   <!-- END ONLY DEV -->
 
@@ -43,7 +43,7 @@ window.hs_config.gulpRGBA = (p1) => {
   }
   throw new Error('Bad Hex');
 }
-            window.hs_config.gulpDarken = (p1) => {
+window.hs_config.gulpDarken = (p1) => {
   const options = p1.split(',')
 
   let col = options[0].toString()
@@ -107,7 +107,7 @@ window.hs_config.gulpRGBA = (p1) => {
   }
   return (usePound ? "#" : "") + (g | (b << 8) | (r << 16)).toString(16)
 }
-            </script>
+</script>
 </head>
 
 <body class="has-navbar-vertical-aside navbar-vertical-aside-show-xl   footer-offset">
